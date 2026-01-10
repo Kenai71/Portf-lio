@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Menu, X, Instagram, Linkedin, Palette } from 'lucide-react'; // Ícones
-import { projects } from './dados/projetos'; // Importe seus dados
+import { Moon, Sun, Menu, X, Instagram } from 'lucide-react'; // Removi ícones não usados
+import { projects } from './dados/projetos'; // Certifique-se que este arquivo existe
 import './App.css';
 
 const App = () => {
@@ -106,7 +106,6 @@ const App = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* AQUI ESTÁ A MUDANÇA DA IMAGEM */}
                     <div className="image-container">
                         <img src={item.image} alt={item.title} />
                     </div>
@@ -138,7 +137,18 @@ const App = () => {
                 <h2 className="section-title-left">Sobre Mim<span>.</span></h2>
                 <p>Olá! Sou <strong>Kenai</strong>, um designer de <strong>18 anos</strong> apaixonado por criar soluções visuais...</p>
                 <p>Acredito que um bom design é a combinação de estratégia, criatividade e atenção aos detalhes.</p>
-                <a href="#contato" className="btn" style={{marginTop: '1rem'}}>Vamos conversar</a>
+                
+                {/* BOTÃO WHATSAPP AQUI */}
+                <a 
+                  href="https://wa.me/5571997391105?text=Quero%20saber%20mais%20sobre%20seus%20servi%C3%A7os" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn" 
+                  style={{marginTop: '1rem'}}
+                >
+                  Vamos conversar
+                </a>
+
               </div>
             </motion.div>
           </div>
@@ -156,7 +166,7 @@ const App = () => {
              >
                 <h2 className="section-title">Vamos criar algo<br/>incrível <span>juntos?</span></h2>
                 <p>Se você tem um projeto em mente ou apenas quer dizer um "oi", adoraria ouvir de você.</p>
-                <a href="mailto:email@exemplo.com" className="btn">Enviar um e-mail</a>
+                <a href="mailto:kenaidesign22@gmail.com" className="btn">Enviar um e-mail</a>
             </motion.div>
           </div>
         </section>
@@ -164,10 +174,17 @@ const App = () => {
 
       <footer>
         <div className="container footer-content">
+          {/* FOOTER EDITADO: APENAS INSTAGRAM */}
           <div className="social-links">
-            <a href="#"><Instagram size={24}/></a>
-            <a href="#"><Palette size={24}/></a> {/* Behance placeholder */}
-            <a href="#"><Linkedin size={24}/></a>
+            <a 
+              href="https://www.instagram.com/kenai.design/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              style={{ color: 'inherit' }} // Mantém a cor do tema (preto no claro, branco no escuro)
+            >
+              <Instagram size={24}/>
+            </a>
           </div>
           <p>&copy; 2025 Kenai. Todos os direitos reservados.</p>
         </div>
