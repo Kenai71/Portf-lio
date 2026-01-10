@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Menu, X, Instagram } from 'lucide-react'; // Removi ícones não usados
-import { projects } from './dados/projetos'; // Certifique-se que este arquivo existe
+// Mantive apenas os ícones usados. O Instagram já vem do lucide-react (padrão preto/branco via CSS)
+import { Moon, Sun, Menu, X, Instagram } from 'lucide-react'; 
+import { projects } from './dados/projects'; // Verifique se o nome do arquivo é projects.js ou projetos.js
 import './App.css';
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
     ? projects 
     : projects.filter(project => project.category === filter);
 
-  // Variantes de Animação (Framer Motion)
+  // Variantes de Animação
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -138,7 +139,7 @@ const App = () => {
                 <p>Olá! Sou <strong>Kenai</strong>, um designer de <strong>18 anos</strong> apaixonado por criar soluções visuais...</p>
                 <p>Acredito que um bom design é a combinação de estratégia, criatividade e atenção aos detalhes.</p>
                 
-                {/* BOTÃO WHATSAPP AQUI */}
+                {/* BOTÃO WHATSAPP CORRIGIDO */}
                 <a 
                   href="https://wa.me/5571997391105?text=Quero%20saber%20mais%20sobre%20seus%20servi%C3%A7os" 
                   target="_blank" 
@@ -148,7 +149,6 @@ const App = () => {
                 >
                   Vamos conversar
                 </a>
-
               </div>
             </motion.div>
           </div>
@@ -172,18 +172,18 @@ const App = () => {
         </section>
       </main>
 
+      {/* FOOTER ATUALIZADO */}
       <footer>
         <div className="container footer-content">
-          {/* FOOTER EDITADO: APENAS INSTAGRAM */}
           <div className="social-links">
+            {/* Ícone do Lucide React herda a cor do texto (preto/branco dependendo do tema) */}
             <a 
               href="https://www.instagram.com/kenai.design/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Instagram"
-              style={{ color: 'inherit' }} // Mantém a cor do tema (preto no claro, branco no escuro)
             >
-              <Instagram size={24}/>
+              <Instagram size={24} />
             </a>
           </div>
           <p>&copy; 2025 Kenai. Todos os direitos reservados.</p>
